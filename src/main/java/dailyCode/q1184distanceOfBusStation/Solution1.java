@@ -1,4 +1,4 @@
-package leetcodeHot100.q1184distanceOfBusStation;
+package dailyCode.q1184distanceOfBusStation;
 
 public class Solution1 {
     public int distanceBetweenBusStops(int[] distance, int start, int destination) {
