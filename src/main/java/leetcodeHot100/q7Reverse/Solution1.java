@@ -20,6 +20,7 @@ public class Solution1 {
             x /= 10;
             rev = rev * 10 + digit;
         }
+        byte i = 12;
         //返回最后结果
         return rev;
     }

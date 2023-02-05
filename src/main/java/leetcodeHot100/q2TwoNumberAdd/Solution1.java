@@ -77,13 +77,13 @@ public class Solution1 {
         //链表指针位置
         int i;
         for (i = 0; i < length-1; i++){
-            index.setVal(ints[i]);
-            index.setNext(new ListNode());
-            index = index.getNext();
+            index.val = ints[i];
+            index.next = new ListNode();
+            index = index.next;
         }
         //给链表最后节点赋值
-        index.setVal(ints[i]);
-        index.setNext(null);
+        index.val = ints[i];
+        index.next = null;
         return listNode;
     }
     public static void main(String[] args) {
