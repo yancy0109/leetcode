@@ -1,4 +1,4 @@
-package leetcodeHot100.q7Reverse;
+package others.q7Reverse;
 
 /**
  * @author yancy0109
