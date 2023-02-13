@@ -1,4 +1,4 @@
-package leetcodeHot100.q6ConvertZ;
+package others.q6ConvertZ;
 
 import java.util.ArrayList;
 import java.util.List;
