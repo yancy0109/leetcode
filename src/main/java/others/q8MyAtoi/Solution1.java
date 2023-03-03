@@ -1,4 +1,4 @@
-package leetcodeHot100.q8MyAtoi;
+package others.q8MyAtoi;
 
 /**
  * @author yancy0109

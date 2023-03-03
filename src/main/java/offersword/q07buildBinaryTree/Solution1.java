@@ -1,4 +1,4 @@
-package offersword.q7buildBinaryTree;
+package offersword.q07buildBinaryTree;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-package offersword.q6reversePrintLinkNode;
+package offersword.q06reversePrintLinkNode;
 
 import java.util.LinkedList;
 
