@@ -9,41 +9,58 @@ import java.util.LinkedList;
  * 20 用两个栈实现队列
  * @author yancy0109
  */
-public class MyQueue {
+class MyQueue {
 
-    private Deque<Integer> inputStack;
-    private Deque<Integer> storeStack;
+    Deque<Integer> inStack;
+    Deque<Integer> outStack;
 
+    /** Initialize your data structure here. */
     public MyQueue() {
-        inputStack = new LinkedList<>();
-        storeStack = new LinkedList<>();
+        inStack = new LinkedList<>();
+        outStack = new LinkedList<>();
     }
 
-    public void appendTail(int value) {
-        inputStack.push(value);
+    /** Push element x to the back of queue. */
+    public void push(int x) {
+        inStack.push(x);
     }
 
-    public int deleteHead() {
-        int restore = -1;
-        if (inputStack.isEmpty()) {
-            return restore;
+    /** Removes the element from in front of queue and returns that element. */
+    public int pop() {
+        if (!outStack.isEmpty()) {
+            return outStack.pop();
         }
-        while (!inputStack.isEmpty()) {
-            storeStack.push(inputStack.pop());
+        if (inStack.isEmpty()) {
+            return -1;
         }
-        restore = storeStack.pop();
-        while (!storeStack.isEmpty()) {
-            inputStack.push(storeStack.pop());
-        }
-        return restore;
+        copy(inStack, outStack);
+        return outStack.pop();
     }
 
-    public static void main(String[] args) {
-        MyQueue obj = new MyQueue();
-        obj.appendTail(3);
-        obj.appendTail(2);
-        int param_2 = obj.deleteHead();
-        System.out.println(param_2);
+    /** Get the front element. */
+    public int peek() {
+        if (!outStack.isEmpty()) {
+            return outStack.peek();
+        }
+        if (inStack.isEmpty()) {
+            return -1;
+        }
+        copy(inStack, outStack);
+        return outStack.peek();
     }
 
+
+    /** Returns whether the queue is empty. */
+    public boolean empty() {
+        if (outStack.isEmpty() && inStack.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
+    void copy(Deque inStack, Deque outStack){
+        while (!inStack.isEmpty()) {
+            outStack.push(inStack.pop());
+        }
+    }
 }
