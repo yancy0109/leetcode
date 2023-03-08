@@ -13,14 +13,14 @@ public class Solution3 {
         LinkedList<Integer> stack = new LinkedList<>();
         ListNode index = head;
         while (index!=null) {
-            stack.add(index.val);
+            stack.push(index.val);
             index = index.next;
         }
         int n = 0;
         int size = stack.size();
         int[] result = new int[size];
         while (n < size) {
-            result[n] = stack.removeLast();
+            result[n] = stack.pop();
             n++;
         }
         return result;

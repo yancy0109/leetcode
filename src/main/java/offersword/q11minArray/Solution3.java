@@ -7,12 +7,16 @@ package offersword.q11minArray;
 public class Solution3 {
     public int minArray(int[] numbers) {
         int len = numbers.length;
+        if (len == 0) {
+            return -1;
+        }
         if (len == 1) {
             return numbers[0];
         }
         int l = 0;
         int r = len-1;
         int mid;
+        // 去除右方与最左方相同的元素 保证为两段非降序队列
         while (numbers[r] == numbers[0] && r > 0) r--;
         // 如果单调
         if (numbers[r] > numbers[0]) return numbers[0];
